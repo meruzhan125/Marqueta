@@ -20,13 +20,13 @@ export const GameDiffEnum = {
 export const CellStatusEnum = {
   Void: -1,
   Fresh: 0,
-  Popped: 1,
+  Revealed: 1,
   Flag: 2
 };
 
 export const CellValueEnum = {
   Void: -1,
-  Zero: 0,
+  Zero: '🟩',
   One: 1,
   Two: 2,
   Three: 3,

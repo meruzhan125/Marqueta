@@ -38,13 +38,13 @@ const detectEdges = (board, cell = CellTemplateEnum.Fresh) => {
   const result = {
     C: false,
     N: cell.r === 0,
-    NE: cell.r === 0 && cell.c === board[0].length - 1,
+    NE: cell.r === 0 || cell.c === board[0].length - 1,
     E: cell.c === board[0].length - 1,
-    SE: cell.r === board.length - 1 && cell.c === board[0].length - 1,
+    SE: cell.r === board.length - 1 || cell.c === board[0].length - 1,
     S: cell.r === board.length - 1,
-    SW: cell.r === board.length - 1 && cell.c === 0,
+    SW: cell.r === board.length - 1 || cell.c === 0,
     W: cell.c === 0,
-    NW: cell.c === 0 && cell.r === 0
+    NW: cell.c === 0 || cell.r === 0
   };
   return result;
 };
@@ -56,12 +56,14 @@ const getNeighbor = (board, cell, dir = DirectionsEnum.C) => {
   return board[cell.r + dir.y][cell.c + dir.x];
 };
 
+// get all neighbors of a cell
 const getAllNeighbors = (board, cell) => {
   let result = [];
-  for (const [k, v] in Object.entries(DirectionsEnum)) {
-    let neighbor = getNeighbor(board, cell, v);
+  // iterate through DirectionsEnum
+  Object.values(DirectionsEnum).forEach((dir) => {
+    let neighbor = getNeighbor(board, cell, dir);
     result.push(neighbor);
-  }
+  });
   return result;
 };
 
