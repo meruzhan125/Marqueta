@@ -9,9 +9,10 @@ export default function Cell({ cell }) {
   const [game, setGame] = useRecoilState(gameState);
 
   const handleClick = () => {
+    // if game is not playing, do nothing
     console.log(cell);
     // if cell value is mine, game over
-    if (cell.value === CellValueEnum.Mine) {
+    if (cell.v === CellValueEnum.Mine) {
       // reveal all cells
       const newGame = _.cloneDeep(game);
       newGame.forEach((row) => {
@@ -25,7 +26,7 @@ export default function Cell({ cell }) {
       return;
     }
     // if cell value is zero, reveal all neighbors
-    if (cell.value === CellValueEnum.Zero) {
+    if (cell.v === CellValueEnum.Zero) {
       // reveal all neighbors
       const newGame = _.cloneDeep(game);
       newGame[cell.r][cell.c].status = CellStatusEnum.Revealed;
@@ -33,7 +34,7 @@ export default function Cell({ cell }) {
     }
 
     // if cell value is not zero, reveal cell
-    if (cell.value !== CellValueEnum.Zero) {
+    if (cell.v !== CellValueEnum.Zero) {
       // reveal cell
       const newGame = _.cloneDeep(game);
       newGame[cell.r][cell.c].status = CellStatusEnum.Revealed;
@@ -43,7 +44,7 @@ export default function Cell({ cell }) {
 
   return (
     <div className='cell' onClick={handleClick}>
-      {cell.status === CellStatusEnum.Revealed ? cell.value : null}
+      {cell.status === CellStatusEnum.Revealed ? cell.v : null}
     </div>
   );
 }

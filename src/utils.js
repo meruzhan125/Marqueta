@@ -26,7 +26,7 @@ const plantMines = (board, diff = GameDiffEnum.Easy) => {
 
   for (let r = 0; r < board.length; r++) {
     for (let c = 0; c < board[0].length; c++) {
-      if (Math.random() < diff.value) result[r][c].value = CellValueEnum.Mine;
+      if (Math.random() < diff.value) result[r][c].v = CellValueEnum.Mine;
     }
   }
 
@@ -71,9 +71,10 @@ const getAllNeighbors = (board, cell) => {
 const valuateCell = (board, cell) => {
   const neighbors = getAllNeighbors(board, cell);
   const neighboringMines = neighbors.filter(
-    (n) => n.value === CellValueEnum.Mine
+    (n) => n.v === CellValueEnum.Mine
   );
   const result = neighboringMines.length;
+  if (result === 0) return CellValueEnum.Zero;
   return result;
 };
 
@@ -84,8 +85,8 @@ const valuateBoard = (board) => {
   for (let r = 0; r < board.length; r++) {
     for (let c = 0; c < board[0].length; c++) {
       const cell = result[r][c];
-      if (cell.value !== CellValueEnum.Mine) {
-        cell.value = valuateCell(board, cell);
+      if (cell.v !== CellValueEnum.Mine) {
+        cell.v = valuateCell(board, cell);
       }
     }
   }

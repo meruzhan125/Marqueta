@@ -41,11 +41,11 @@ export const CellValueEnum = {
 export const CellTemplateEnum = {
   Fresh: {
     status: CellStatusEnum.Fresh,
-    value: CellValueEnum.Zero,
+    v: CellValueEnum.Zero,
     r: 0,
     c: 0
   },
-  Void: { status: CellStatusEnum.Void, value: CellValueEnum.Void, r: -1, c: -1 }
+  Void: { status: CellStatusEnum.Void, v: CellValueEnum.Void, r: -1, c: -1 }
 };
 
 export const DirectionsEnum = {
