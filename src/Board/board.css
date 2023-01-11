@@ -1,0 +1,11 @@
+.board {
+  margin: 20px auto;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 8px;
+  background: #dedede;
+  box-shadow: 3px 3px 6px #cccccc, -3px -3px 6px #f0f0f0;
+}
+.row {
+  display: flex;
+}

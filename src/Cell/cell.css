@@ -1,0 +1,17 @@
+.cell {
+  width: 24px;
+  height: 24px;
+  margin: 0 4px 4px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #eeeeee, #c8c8c8);
+}
+
+.cell:hover {
+  background: linear-gradient(145deg, #ececec, #c0c0c0);
+}
+
+.cell .popped {
+  border-radius: 8px;
+  background: linear-gradient(145deg, #c8c8c8, #eeeeee);
+}

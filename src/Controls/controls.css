@@ -1,0 +1,27 @@
+.controls-wrapper {
+  display: inline-flex;
+  margin: 20px auto;
+  width: fit-content;
+  padding: 10px;
+  border-radius: 8px;
+  background: #dedede;
+  box-shadow: 3px 3px 6px #cccccc, -3px -3px 6px #f0f0f0;
+}
+
+.btn {
+  height: 24px;
+  padding: 8px 8px 0;
+  margin-right: 6px;
+  cursor: pointer;
+  border-radius: 8px;
+  background: linear-gradient(145deg, #eeeeee, #c8c8c8);
+}
+
+.btn:hover {
+  background: linear-gradient(145deg, #ececec, #c0c0c0);
+}
+
+.btn.active,
+.btn:active {
+  background: linear-gradient(145deg, #b2b2b2, #efefef);
+}
