@@ -102,4 +102,4 @@ const createGameBoard = (size = GameSizeEnum.S, diff = GameDiffEnum.Easy) => {
   return board;
 };
 
-export { createGameBoard };
+export { createGameBoard, getAllNeighbors };

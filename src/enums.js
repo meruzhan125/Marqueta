@@ -45,7 +45,9 @@ export const CellTemplateEnum = {
     r: 0,
     c: 0
   },
-  Void: { status: CellStatusEnum.Void, v: CellValueEnum.Void, r: -1, c: -1 }
+  Void: { 
+    status: CellStatusEnum.Void, 
+    v: CellValueEnum.Void, r: 0, c: 0 }
 };
 
 export const DirectionsEnum = {
