@@ -1,2 +1,0 @@
-# mines
-Created with CodeSandbox
